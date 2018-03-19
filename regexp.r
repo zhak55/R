@@ -15,3 +15,12 @@ gsub("(a+)", 'p\\U\\1p', t, ignore.case = T) # "pUapbpUap"    "pUaapbbpUaap" "pU
 grep('d+', t, perl = T, value = T) # "AAbcda"
 grep('d+', t, perl = T, value = F) # 3 (index)
 grepl('d+', t, perl = T) # FALSE FALSE  TRUE
+
+# if you need to filter data by regexp 
+library('gsubfn')
+# e.g. get data filter by GRZ pattern 
+strapplyc(data,
+          '([а-я]{1}[0-9]{3}[а-я]{2}[0-9]{2,3})', 
+          simplify = TRUE, 
+          ignore.case = T) %>%
+          unlist()
