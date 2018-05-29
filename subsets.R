@@ -23,3 +23,7 @@ sqldf("select * from mtcars where gear=3 AND vs=1 order by mpg DESC") # you can 
 # 1 21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
 # 2 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
 # 3 18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+
+# Working with list
+l <- list(a = list(b = list(c = list(1:5))))
+l[[c('a', 'b', 'c')]]
